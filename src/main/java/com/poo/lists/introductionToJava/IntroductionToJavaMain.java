@@ -5,7 +5,9 @@ import javax.swing.JOptionPane;
 import static com.poo.menus.Menus.LoadingExitScreen;
 import static com.poo.menus.Menus.LoadingScreen;
 import static com.poo.menus.Menus.introductionToJavaMenu;
+
 import static com.poo.lists.introductionToJava.Q01.IntroductionToJavaQ1.introductionToJava01;
+import static com.poo.lists.introductionToJava.Q02.IntroductionToJavaQ2.introductionToJava02;
 
 public class IntroductionToJavaMain {
 
@@ -17,7 +19,7 @@ public class IntroductionToJavaMain {
             questionChoose = introductionToJavaMenu();
             switch (questionChoose) {
                 case 0 -> introductionToJava01();
-                case 1 -> {}//introductionToJava02();
+                case 1 -> introductionToJava02();
                 case 2 -> {}//introductionToJava03();
                 case 3 -> {}//introductionToJava04();
                 case 4 -> {}//introductionToJava05();
