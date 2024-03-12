@@ -8,6 +8,7 @@ import static com.poo.menus.Menus.introductionToJavaMenu;
 
 import static com.poo.lists.introductionToJava.Q01.IntroductionToJavaQ1.introductionToJava01;
 import static com.poo.lists.introductionToJava.Q02.IntroductionToJavaQ2.introductionToJava02;
+import static com.poo.lists.introductionToJava.Q03.IntroductionToJavaQ3.introductionToJava03;
 
 public class IntroductionToJavaMain {
 
@@ -20,7 +21,7 @@ public class IntroductionToJavaMain {
             switch (questionChoose) {
                 case 0 -> introductionToJava01();
                 case 1 -> introductionToJava02();
-                case 2 -> {}//introductionToJava03();
+                case 2 -> introductionToJava03();
                 case 3 -> {}//introductionToJava04();
                 case 4 -> {}//introductionToJava05();
                 case 5 -> {}//introductionToJava06();

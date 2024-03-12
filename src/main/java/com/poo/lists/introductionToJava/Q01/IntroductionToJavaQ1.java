@@ -12,7 +12,6 @@ public class IntroductionToJavaQ1 {
         while (!valid) {
             String input = JOptionPane.showInputDialog("Digite o valor do lado do quadrado: ");
             if (input == null) {
-                // O usuário pressionou "Cancelar" ou "Esc". Lidar com isso aqui.
                 valid = true;
             } else {
                 try {
@@ -26,7 +25,7 @@ public class IntroductionToJavaQ1 {
                         valid = true;
                     }
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Valor inválido, tente novamente");
+                    JOptionPane.showMessageDialog(null, "Valor inválido, tente novamente!");
                 }
             }
         }
