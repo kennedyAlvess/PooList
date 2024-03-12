@@ -1,20 +1,20 @@
-# Resolução da Lista de POO
+# Object-Oriented Programming (OOP) List Resolution
 
-Este projeto contém a resolução da lista proposta em aula para a disciplina de Programação Orientada a Objetos.
+This project contains the resolution of the list proposed in class for the Object-Oriented Programming discipline.
 
-## Descrição
+## Description
 
-A lista de exercícios aborda os conceitos fundamentais de POO, incluindo classes, objetos, herança, polimorfismo, encapsulamento, entre outros. Cada exercício é acompanhado de uma descrição detalhada do problema e dos requisitos a serem implementados.
+The exercise list covers the fundamental concepts of OOP, including classes, objects, inheritance, polymorphism, encapsulation, among others. Each exercise is accompanied by a detailed description of the problem and the requirements to be implemented.
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto está organizado da seguinte forma:
+The project is organized as follows:
 
-- Introdução ao Java
-- Criação de classes
-- Array e ArrayList
-- Reuso de classes
-- Classes abstratas
-- Polimorfismo e interfaces
-- Coleções genéricas
-- Exceções
+- Introduction to Java
+- Class Creation
+- Array and ArrayList
+- Class Reusability
+- Abstract Classes
+- Polymorphism and Interfaces
+- Generic Collections
+- Exceptions
