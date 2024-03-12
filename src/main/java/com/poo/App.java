@@ -1,7 +1,5 @@
 package com.poo;
 
-import javax.swing.JOptionPane;
-
 import static com.poo.lists.introductionToJava.IntroductionToJavaMain.introductionToJavaMain;
 import static com.poo.menus.Menus.LoadingExitScreen;
 import static com.poo.menus.Menus.mainMenu;
