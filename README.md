@@ -18,3 +18,14 @@ The project is organized as follows:
 - Polymorphism and Interfaces
 - Generic Collections
 - Exceptions
+
+## Switching to the "dev" Branch
+
+To switch to the "dev" branch, where the most up-to-date code is being developed, follow the steps below:
+
+1. Open the terminal or command prompt.
+2. Navigate to the directory of your local repository using the `cd` command.
+3. Execute the command `git checkout dev`.
+
+After executing these steps, you will be on the "dev" branch and can work with the most updated code in development.
+
