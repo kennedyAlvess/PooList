@@ -29,3 +29,19 @@ To switch to the "dev" branch, where the most up-to-date code is being developed
 
 After executing these steps, you will be on the "dev" branch and can work with the most updated code in development.
 
+## Instructions to run the project with maven:
+
+Make sure you have Maven installed on your system. You can check by running the command mvn -v in your terminal or command prompt. If Maven is not installed, you can download it from the Apache Maven website and follow the installation instructions.
+
+Open your terminal or command prompt and navigate to the root directory of your Maven project.
+
+```cd path/to/ur/project```
+
+Build the project by running the command ```mvn clean install```. This will compile the source code, run tests, and package the project into a JAR or WAR file.
+
+Once the build is successful, you can run the project using the command ```mvn exec:java```.
+
+Maven will execute your project and you should see the output in the terminal or command prompt.
+
+That's it! You have successfully run a simple Maven project.
+
