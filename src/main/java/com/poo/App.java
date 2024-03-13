@@ -1,9 +1,8 @@
 package com.poo;
 
 import static com.poo.lists.introductionToJava.IntroductionToJavaMain.introductionToJavaMain;
-import static com.poo.menus.Menus.LoadingExitScreen;
+import static com.poo.screens.Exit.LoadingExitScreen;
 import static com.poo.menus.Menus.mainMenu;
-
 
 public class App {
     

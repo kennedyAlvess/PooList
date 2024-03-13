@@ -2,8 +2,8 @@ package com.poo.lists.introductionToJava;
 
 import javax.swing.JOptionPane;
 
-import static com.poo.menus.Menus.LoadingExitScreen;
-import static com.poo.menus.Menus.LoadingScreen;
+import static com.poo.screens.Exit.LoadingExitScreen;
+import static com.poo.screens.Loading.LoadingScreen;
 import static com.poo.menus.Menus.introductionToJavaMenu;
 
 import static com.poo.lists.introductionToJava.Q01.IntroductionToJavaQ1.introductionToJava01;
