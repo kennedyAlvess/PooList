@@ -7,14 +7,24 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import com.poo.controllers.menu.AppViewController;
+
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class AppView extends JFrame {
-    private JButton button1, button2, button3, button4, button5, button6, button7, button8, button9;
+
+    private static JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
+    private final Dimension buttonSize = new Dimension(250, 30);
+    private final Border roundedBorder = new LineBorder(Color.BLACK, 1, true);
+    private final  Insets buttonMargin = new Insets(10, 0, 1, 0);
 
     public AppView() {
 
@@ -27,45 +37,31 @@ public class AppView extends JFrame {
         menuPrincipal.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
-        JLabel label = new JLabel("Escolha o tópico que deseja");
-        label.setHorizontalAlignment(JLabel.CENTER);
-
-        button1 = new JButton("Introduction to Java");
-        button2 = new JButton("Criação de classes - Parte 1");
-        button3 = new JButton("Criação de classes - Parte 2");
-        button4 = new JButton("Arrays e ArrayLists");
-        button5 = new JButton("Reúso de classes");
-        button6 = new JButton("Classes abstratas, polimorfismo e interfaces");
-        button7 = new JButton("Coleções genéricas");
-        button8 = new JButton("Exceções");
-        button9 = new JButton("Exit");
-
-        Dimension buttonSize = new Dimension(200, 30);
-
-        button1.setPreferredSize(buttonSize);
-        button2.setPreferredSize(buttonSize);
-        button3.setPreferredSize(buttonSize);
-        button4.setPreferredSize(buttonSize);
-        button5.setPreferredSize(buttonSize);
-        button6.setPreferredSize(buttonSize);
-        button7.setPreferredSize(buttonSize);
-        button8.setPreferredSize(buttonSize);
-        button9.setPreferredSize(buttonSize);
-
+        JLabel menuTitlelabel = new JLabel("Lista de Exercícios");
+        menuTitlelabel.setHorizontalAlignment(JLabel.CENTER);
+        menuTitlelabel.setFont(new Font("Arial", Font.BOLD, 20));
         gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.insets = new Insets(0, 0, 50, 0);
-        menuPrincipal.add(label, gbc);
+        gbc.insets = new Insets(0, 0, 20, 0);
+        menuPrincipal.add(menuTitlelabel, gbc);
 
-        // Crie uma borda arredondada
-        Border roundedBorder = new LineBorder(Color.BLACK, 1, true);
+        introButton = new JButton("Introdução ao Java");
+        cls1Button = new JButton("Criação de classes - Parte 1");
+        cls2Button = new JButton("Criação de classes - Parte 2");
+        arrayButton = new JButton("Arrays e ArrayLists");
+        reusButton = new JButton("Reúso de classes");
 
-        // Crie uma margem entre os botões
-        Insets buttonMargin = new Insets(10, 0, 10, 0); // 10 pixels de margem no topo e na parte inferior
-        gbc.gridy++;
-        // Aplique a borda e a margem a cada botão
-        for (JButton button : new JButton[] { button1, button2, button3, button4, button5, button6, button7, button8,
-                button9 }) {
+        absButton = new JButton("Classes abstratas, polimorfismo e interfaces");
+        absButton.setFont(new Font(absButton.getFont().getName(), absButton.getFont().getStyle(), 10));
+
+        colectionButton = new JButton("Coleções genéricas");
+        exButton = new JButton("Exceções");
+        exitButton = new JButton("Sair");
+
+        for (JButton button : new JButton[] { introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton,
+                exitButton }) {
+            gbc.gridy++;
+            button.setPreferredSize(buttonSize);
             button.setBorder(roundedBorder);
             gbc.insets = buttonMargin;
             menuPrincipal.add(button, gbc);
@@ -74,6 +70,13 @@ public class AppView extends JFrame {
 
         setResizable(false);
         add(menuPrincipal);
+
+
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AppViewController.exitButtonAction();
+            }
+        });
 
     }
 }
