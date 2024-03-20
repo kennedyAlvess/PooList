@@ -1,14 +1,10 @@
 package com.poo.views.menu;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-
-import com.poo.controllers.menu.AppViewController;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,8 +14,9 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.poo.controllers.menu.AppViewController;
 
-public class AppView extends JFrame {
+public class AppView extends JPanel {
 
     private static JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
     private final Dimension buttonSize = new Dimension(250, 30);
@@ -27,15 +24,11 @@ public class AppView extends JFrame {
     private final  Insets buttonMargin = new Insets(10, 0, 1, 0);
 
     public AppView() {
-
-        setTitle("Menu");
-        setSize(400, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JPanel menuPrincipal = new JPanel();
-        menuPrincipal.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
+        
+        setSize(500, 500);
+        setLayout(new GridBagLayout());
+        setBorder(new LineBorder(Color.BLACK, 1, true));
+                GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel menuTitlelabel = new JLabel("Lista de Exercícios");
         menuTitlelabel.setHorizontalAlignment(JLabel.CENTER);
@@ -43,7 +36,7 @@ public class AppView extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.insets = new Insets(0, 0, 20, 0);
-        menuPrincipal.add(menuTitlelabel, gbc);
+        add(menuTitlelabel, gbc);
 
         introButton = new JButton("Introdução ao Java");
         cls1Button = new JButton("Criação de classes - Parte 1");
@@ -64,19 +57,22 @@ public class AppView extends JFrame {
             button.setPreferredSize(buttonSize);
             button.setBorder(roundedBorder);
             gbc.insets = buttonMargin;
-            menuPrincipal.add(button, gbc);
+            add(button, gbc);
             gbc.gridy++;
         }
-
-        setResizable(false);
-        add(menuPrincipal);
-
-
+       
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AppViewController.exitButtonAction();
             }
         });
 
+        introButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AppViewController.introButtonAction();
+            }
+        });
+    
+        setVisible(true);
     }
 }
