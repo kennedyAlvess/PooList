@@ -1,8 +1,10 @@
 package com.poo;
 
+import static com.poo.views.menu.MainScreen.start;
+
 import javax.swing.SwingUtilities;
 
-import static com.poo.views.menu.MainScreen.start;
+
 
 public class App  {
     public static void main(String[] args) {

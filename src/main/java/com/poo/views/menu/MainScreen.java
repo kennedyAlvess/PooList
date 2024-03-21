@@ -32,4 +32,7 @@ public class MainScreen {
         screens.add(appView, "appView");
     }
 
+    public static void changeScreen(JPanel screen) {
+        screenLayout.show(screens, screen.getName());
+    }
 }

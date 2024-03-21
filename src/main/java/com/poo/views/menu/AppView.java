@@ -50,29 +50,32 @@ public class AppView extends JPanel {
         colectionButton = new JButton("Coleções genéricas");
         exButton = new JButton("Exceções");
         exitButton = new JButton("Sair");
+        
+        ActionListener actionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String command = e.getActionCommand();
+        
+                if (exitButton.getText().equals(command)) {
+                    AppViewController.exitButtonAction();
+                } else if (exitButton.getText().equals(command)) {
+                    AppViewController.introButtonAction();
+                }
+            }
+        };
 
         for (JButton button : new JButton[] { introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton,
                 exitButton }) {
             gbc.gridy++;
+            button.setActionCommand(button.getText());
+            button.addActionListener(actionListener);
             button.setPreferredSize(buttonSize);
             button.setBorder(roundedBorder);
             gbc.insets = buttonMargin;
             add(button, gbc);
             gbc.gridy++;
         }
-       
-        exitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AppViewController.exitButtonAction();
-            }
-        });
 
-        introButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AppViewController.introButtonAction();
-            }
-        });
-    
         setVisible(true);
+
     }
 }
