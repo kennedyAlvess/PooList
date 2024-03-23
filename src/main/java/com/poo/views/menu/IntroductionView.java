@@ -1,5 +1,32 @@
 package com.poo.views.menu;
 
-public class IntroductionView {
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
+public class IntroductionView extends JPanel{
+
+    public IntroductionView() {
+    
+        setLayout(new GridBagLayout());
+        setBorder(new LineBorder(Color.BLACK, 1, true));
+                GridBagConstraints gbc = new GridBagConstraints();
+
+        JLabel menuTitlelabel = new JLabel("Introdução ao Java");
+        menuTitlelabel.setHorizontalAlignment(JLabel.CENTER);
+        menuTitlelabel.setFont(new Font("Arial", Font.BOLD, 20));
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.insets = new Insets(0, 0, 20, 0);
+        add(menuTitlelabel, gbc);
+
+        setVisible(true);
+    }
     
 }

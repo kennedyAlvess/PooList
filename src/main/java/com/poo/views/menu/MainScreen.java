@@ -29,10 +29,12 @@ public class MainScreen {
 
     private static void initComponents() {
         AppView appView = new AppView();
+        IntroductionView introductionView = new IntroductionView();
         screens.add(appView, "appView");
+        screens.add(introductionView, "introductionView");
     }
 
-    public static void changeScreen(JPanel screen) {
-        screenLayout.show(screens, screen.getName());
+    public static void changeScreen(String screenName) {
+        screenLayout.show(screens, screenName);
     }
 }

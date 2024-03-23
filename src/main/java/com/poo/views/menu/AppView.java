@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 
 import com.poo.controllers.menu.AppViewController;
 
-public class AppView extends JPanel {
+public class AppView extends JPanel{
 
     private static JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
     private final Dimension buttonSize = new Dimension(250, 30);
@@ -24,8 +24,7 @@ public class AppView extends JPanel {
     private final  Insets buttonMargin = new Insets(10, 0, 1, 0);
 
     public AppView() {
-        
-        setSize(500, 500);
+
         setLayout(new GridBagLayout());
         setBorder(new LineBorder(Color.BLACK, 1, true));
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -39,34 +38,55 @@ public class AppView extends JPanel {
         add(menuTitlelabel, gbc);
 
         introButton = new JButton("Introdução ao Java");
+        introButton.setName("introButton");
+
         cls1Button = new JButton("Criação de classes - Parte 1");
+        cls1Button.setName("cls1Button");
+
         cls2Button = new JButton("Criação de classes - Parte 2");
+        cls2Button.setName("cls2Button");
+
         arrayButton = new JButton("Arrays e ArrayLists");
+        arrayButton.setName("arrayButton");
+
         reusButton = new JButton("Reúso de classes");
+        reusButton.setName("reusButton");
 
         absButton = new JButton("Classes abstratas, polimorfismo e interfaces");
         absButton.setFont(new Font(absButton.getFont().getName(), absButton.getFont().getStyle(), 10));
+        absButton.setName("absButton");
 
         colectionButton = new JButton("Coleções genéricas");
+        colectionButton.setName("colectionButton");
+
         exButton = new JButton("Exceções");
+        exButton.setName("exButton");
+
         exitButton = new JButton("Sair");
-        
+        exitButton.setName("exitButton");
+
         ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();
-        
-                if (exitButton.getText().equals(command)) {
-                    AppViewController.exitButtonAction();
-                } else if (exitButton.getText().equals(command)) {
-                    AppViewController.introButtonAction();
-                }
+                
+                switch (command) {
+                    case "introButton" -> AppViewController.introButtonAction();
+                    case "cls1Button" -> AppViewController.cls1ButtonAction();
+                    case "cls2Button" -> AppViewController.cls2ButtonAction();
+                    case "arrayButton" -> AppViewController.arrayButtonAction();
+                    case "reusButton" -> AppViewController.reusButtonAction();
+                    case "absButton" -> AppViewController.absButtonAction();
+                    case "colectionButton" -> AppViewController.colectionButtonAction();
+                    case "exButton" -> AppViewController.exButtonAction();
+                    case "exitButton" -> AppViewController.exitButtonAction();
+                }  
             }
         };
 
         for (JButton button : new JButton[] { introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton,
                 exitButton }) {
             gbc.gridy++;
-            button.setActionCommand(button.getText());
+            button.setActionCommand(button.getName());
             button.addActionListener(actionListener);
             button.setPreferredSize(buttonSize);
             button.setBorder(roundedBorder);
@@ -76,6 +96,5 @@ public class AppView extends JPanel {
         }
 
         setVisible(true);
-
     }
 }
