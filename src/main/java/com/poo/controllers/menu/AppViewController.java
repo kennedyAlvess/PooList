@@ -1,6 +1,6 @@
 package com.poo.controllers.menu;
 
-import static com.poo.views.menu.MainScreen.changeScreen;
+import static com.poo.views.menu.ScreensActions.changeScreen;
 
 public class AppViewController{
    

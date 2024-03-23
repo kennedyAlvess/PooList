@@ -26,8 +26,7 @@ public class AppView extends JPanel{
     public AppView() {
 
         setLayout(new GridBagLayout());
-        setBorder(new LineBorder(Color.BLACK, 1, true));
-                GridBagConstraints gbc = new GridBagConstraints();
+        GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel menuTitlelabel = new JLabel("Lista de Exercícios");
         menuTitlelabel.setHorizontalAlignment(JLabel.CENTER);

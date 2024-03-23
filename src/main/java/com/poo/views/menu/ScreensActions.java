@@ -2,11 +2,10 @@ package com.poo.views.menu;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MainScreen {
+public class ScreensActions {
 
     private static CardLayout screenLayout = new CardLayout();
     private static JPanel screens = new JPanel(screenLayout);

@@ -2,9 +2,6 @@ package com.poo.views.menu;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -15,8 +12,7 @@ public class IntroductionView extends JPanel{
     public IntroductionView() {
     
         setLayout(new GridBagLayout());
-        setBorder(new LineBorder(Color.BLACK, 1, true));
-                GridBagConstraints gbc = new GridBagConstraints();
+        GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel menuTitlelabel = new JLabel("Introdução ao Java");
         menuTitlelabel.setHorizontalAlignment(JLabel.CENTER);
