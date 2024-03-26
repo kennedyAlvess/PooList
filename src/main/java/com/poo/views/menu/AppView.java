@@ -18,12 +18,14 @@ import com.poo.controllers.menu.AppViewController;
 
 public class AppView extends JPanel{
 
-    private static JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
     private final Dimension buttonSize = new Dimension(250, 30);
     private final Border roundedBorder = new LineBorder(Color.BLACK, 1, true);
     private final  Insets buttonMargin = new Insets(10, 0, 1, 0);
 
-    public AppView() {
+    public AppView() { 
+
+
+        JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -91,7 +93,6 @@ public class AppView extends JPanel{
             button.setBorder(roundedBorder);
             gbc.insets = buttonMargin;
             add(button, gbc);
-            gbc.gridy++;
         }
 
         setVisible(true);
