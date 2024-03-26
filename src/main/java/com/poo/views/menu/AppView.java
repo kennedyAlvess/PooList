@@ -14,7 +14,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.poo.controllers.menu.AppViewController;
+import static com.poo.views.menu.ScreensActions.changeScreen;
 
 public class AppView extends JPanel{
 
@@ -23,7 +23,6 @@ public class AppView extends JPanel{
     private final  Insets buttonMargin = new Insets(10, 0, 1, 0);
 
     public AppView() { 
-
 
         JButton introButton, cls1Button, cls2Button, arrayButton, reusButton, absButton, colectionButton, exButton, exitButton;
 
@@ -39,29 +38,29 @@ public class AppView extends JPanel{
         add(menuTitlelabel, gbc);
 
         introButton = new JButton("Introdução ao Java");
-        introButton.setName("introButton");
+        introButton.setName("introductionView");
 
         cls1Button = new JButton("Criação de classes - Parte 1");
-        cls1Button.setName("cls1Button");
+        cls1Button.setName("classCreationPart1View");
 
         cls2Button = new JButton("Criação de classes - Parte 2");
-        cls2Button.setName("cls2Button");
+        cls2Button.setName("classCreationPart2View");
 
         arrayButton = new JButton("Arrays e ArrayLists");
-        arrayButton.setName("arrayButton");
+        arrayButton.setName("arrayArrayListView");
 
         reusButton = new JButton("Reúso de classes");
-        reusButton.setName("reusButton");
+        reusButton.setName("classReuseView");
 
         absButton = new JButton("Classes abstratas, polimorfismo e interfaces");
         absButton.setFont(new Font(absButton.getFont().getName(), absButton.getFont().getStyle(), 10));
-        absButton.setName("absButton");
+        absButton.setName("abstractInterfaceView");
 
         colectionButton = new JButton("Coleções genéricas");
-        colectionButton.setName("colectionButton");
+        colectionButton.setName("genericCollectionView");
 
         exButton = new JButton("Exceções");
-        exButton.setName("exButton");
+        exButton.setName("exceptionsView");
 
         exitButton = new JButton("Sair");
         exitButton.setName("exitButton");
@@ -69,18 +68,8 @@ public class AppView extends JPanel{
         ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();
-                
-                switch (command) {
-                    case "introButton" -> AppViewController.introButtonAction();
-                    case "cls1Button" -> AppViewController.cls1ButtonAction();
-                    case "cls2Button" -> AppViewController.cls2ButtonAction();
-                    case "arrayButton" -> AppViewController.arrayButtonAction();
-                    case "reusButton" -> AppViewController.reusButtonAction();
-                    case "absButton" -> AppViewController.absButtonAction();
-                    case "colectionButton" -> AppViewController.colectionButtonAction();
-                    case "exButton" -> AppViewController.exButtonAction();
-                    case "exitButton" -> AppViewController.exitButtonAction();
-                }  
+                if(command.equals("exitButton")) System.exit(0);
+                changeScreen(command); 
             }
         };
 

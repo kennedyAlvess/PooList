@@ -16,7 +16,7 @@ public class ScreensActions {
         frame.getContentPane().add(screens);
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
-        //frame.setResizable(false);
+        frame.setResizable(false);
         frame.setVisible(true);
         screenLayout.show(screens, "appView");
     }
@@ -24,6 +24,13 @@ public class ScreensActions {
     private static void initComponents() {
         screens.add(new AppView(), "appView");
         screens.add(new IntroductionView(), "introductionView");
+        screens.add(new ClassCreationPart1View(), "classCreationPart1View");
+        screens.add(new ClassCreationPart2View(), "classCreationPart2View");
+        screens.add(new ArrayArrayListView(), "arrayArrayListView");
+        screens.add(new ClassReuseView(), "classReuseView");
+        screens.add(new InterfacesView(), "abstractInterfaceView");
+        screens.add(new GenericCollectionsView(), "genericCollectionView");
+        screens.add(new ExceptionsView(), "exceptionsView");
     }
 
     public static void changeScreen(String screenName) {

@@ -16,7 +16,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.poo.controllers.menu.IntroductionViewController;
+import static com.poo.views.menu.ScreensActions.changeScreen;
 
 public class IntroductionView extends JScrollPane {
 
@@ -67,9 +67,11 @@ public class IntroductionView extends JScrollPane {
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();
                 
-                switch (command) {
-                  case "question23" -> IntroductionViewController.backButton();
-                }  
+                if(!command.equals("question23")){
+                    changeScreen(command);
+                    return;
+                }
+                changeScreen("appView");
             }
         };
         
