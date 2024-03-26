@@ -1,12 +1,13 @@
 package com.poo;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ){
-        System.out.println( "Hello World!" );
+import javax.swing.SwingUtilities;
+
+import static com.poo.views.menu.ScreensActions.start;
+
+public class App  {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            start();
+        });       
     }
 }
