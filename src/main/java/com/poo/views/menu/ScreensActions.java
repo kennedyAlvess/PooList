@@ -36,4 +36,8 @@ public class ScreensActions {
     public static void changeScreen(String screenName) {
         screenLayout.show(screens, screenName);
     }
+
+    public static JPanel getScreens() {
+        return screens;
+    }
 }
